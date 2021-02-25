@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>main page</title>
+		<link rel="stylesheet" href="main.css" />
+		<script defer src="./slider.js"></script>
+		<script defer src="https://kit.fontawesome.com/93cf0078c1.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<header>
+			<div class="nav">
+				<div class="nav-left">
+					<div class="logo">logo</div>
+				</div>
+				<div class="nav-right">
+					<div class="nav-right__item"><a href="#">link1</a></div>
+					<div class="nav-right__item"><a href="#">link2</a></div>
+					<img class="profile_img" src="thunder.png" alt="프로필이미지" />
+				</div>
+			</div>
+			<div class="search-bar__wrap">
+				<form class="search-bar">
+					<span class="search-bar__icon"><i class="fas fa-search"></i></span>
+					<input class="search-bar__item" type="text" placeholder="search" />
+					<input class="search-bar__btn" type="submit" value="검색" />
+				</form>
+			</div>
+		</header>
+		<main>
+			<div class="container">
+				<div class="slider-hidden">
+					<div class="slider">
+						<div class="img-slider">
+							<button class="slider-prevBtn"><i class="fas fa-chevron-left"></i></button>
+							<img src="./image/01.jpg" alt="슬라이드01" />
+							<img src="./image/01.jpg" alt="슬라이드01" />
+							<img src="./image/01.jpg" alt="슬라이드01" />
+							<button class="slider-nextBtn"><i class="fas fa-chevron-right"></i></button>
+						</div>
+						<div class="img-slider">
+							<button class="slider-prevBtn"><i class="fas fa-chevron-left"></i></button>
+							<img src="./image/bg.jpeg" alt="슬라이드01" />
+							<button class="slider-nextBtn"><i class="fas fa-chevron-right"></i></button>
+						</div>
+						<div class="img-slider">
+							<button class="slider-prevBtn"><i class="fas fa-chevron-left"></i></button>
+							<img src="./image/bg.jpeg" alt="슬라이드01" />
+							<button class="slider-nextBtn"><i class="fas fa-chevron-right"></i></button>
+						</div>
+					</div>
+					</div>
+				</div>
+
+				<div class="content-category">
+					<div class="content-category__item"><a href="#">한식</a></div>
+					<div class="content-category__item"><a href="#">양식</a></div>
+					<div class="content-category__item"><a href="#">중식</a></div>
+					<div class="content-category__item"><a href="#">일식</a></div>
+					<div class="content-category__item"><a href="#">분식</a></div>
+					<div class="content-category__item"><a href="#">카페/디저트</a></div>
+				</div>
+				<div class="content">
+					<div class="content-list">
+						<img class="content-list__img" src="./image/01.jpg" alt="" />
+						<div class="text_wrap">
+							<div class="content-list__text">
+								<h1 class="text_title">
+									<a href="#">스티키리키</a>
+								</h1>
+								<h3 class="text_description">용산/숙대 - 카페/디저트</h3>
+								<div class="rating__score">
+									4.6
+									<i class="fas fa-star"></i>
+								</div>
+							</div>
+							<div class="more_info">
+								<a href="#">더보기 </a>
+								<a href="#"><i class="fas fa-chevron-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="content-list">
+						<img class="content-list__img" src="./image/03.jpg" alt="" />
+						<div class="text_wrap">
+							<div class="content-list__text">
+								<h1 class="text_title">
+									<a href="#">쎄쎄종</a>
+								</h1>
+								<h3 class="text_description">논현동 - 카페/디저트</h3>
+								<div class="rating__score">
+									4.8
+									<i class="fas fa-star"></i>
+								</div>
+							</div>
+							<div class="more_info">
+								<a href="#">더보기 </a>
+								<a href="#"><i class="fas fa-chevron-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+	<footer>
+		<h1>footer</h1>
+	</footer>
+</html>

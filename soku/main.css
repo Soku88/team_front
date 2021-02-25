@@ -1,5 +1,6 @@
 @import "reset.css";
 @import "header.css";
+@import "slider.css";
 @import url("https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600;700&family=Kirang+Haerang&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cute+Font&display=swap");
 
@@ -12,9 +13,6 @@ main {
 	position: relative;
 	top: 220px;
 	z-index: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
 .content-category {
@@ -98,10 +96,59 @@ footer {
 	font-size: 4rem;
 	position: relative;
 	height: 200px;
+	width: 100%;
 	color: #f2ab39;
-	/* opacity: 0.8; */
 	text-shadow: 2px 2px 5px#69491a;
 	background-image: url("./image/hg2.jpg");
 	background-color: #bcbcbc;
 	top: 300px;
+}
+
+.text_title {
+	margin-bottom: 5px;
+}
+.text_description {
+	margin-bottom: 10px;
+}
+.rating {
+	width: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1rem;
+	color: #bcbcbc;
+}
+
+.rating__score {
+	font-size: 2.5rem;
+	color: #bcbcbc;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+.rating__score i {
+	color: #f2ab39;
+	font-size: 1.8rem;
+	margin-left: 10px;
+	text-shadow: 3px 3px 5px #69491a;
+}
+
+.text_wrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.more_info {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.more_info a {
+	height: 30px;
+	font-size: 20px;
+	text-decoration: none;
+	color: #bcbcbc;
+}
+.more_info i {
+	margin-left: 10px;
 }

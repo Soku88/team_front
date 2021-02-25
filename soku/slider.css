@@ -1,0 +1,28 @@
+.slider {
+	width: 300vw;
+	transition: all 0.7s;
+}
+.slider-hidden {
+	overflow: hidden;
+}
+.img-slider {
+	width: 100vw;
+	float: left;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.img-slider img {
+	height: 300px;
+	width: 300px;
+	margin: 10px;
+	border-radius: 40px;
+}
+.img-slider button {
+	margin: 20px;
+	outline: none;
+	font-size: 40px;
+	background-color: white;
+	color: #f2ab39;
+	text-shadow: 2px 2px 5px#69491a;
+}
