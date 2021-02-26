@@ -26,3 +26,44 @@
 	color: #f2ab39;
 	text-shadow: 2px 2px 5px#69491a;
 }
+
+.slider-wrapper {
+	position: relative;
+	width: 960px;
+	height: 300px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.sliders {
+	display: flex;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: left 0.5s ease-out;
+}
+.sliders img {
+	width: 300px;
+	height: 300px;
+}
+.sliders li:not(:last-child) {
+	margin-right: 30px;
+}
+
+.controls {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.controls span {
+	border-radius: 50%;
+	font-size: 40px;
+	color: #f2ab39;
+	margin: 0px 10px;
+}
+
+.controls span.prev {
+	right: calc(100%);
+}
+.controls span.next {
+	left: calc(100%);
+}

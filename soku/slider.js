@@ -1,11 +1,31 @@
-const slider = document.querySelector(".slider");
-const prev = document.querySelector(".slider-prevBtn");
-const next = document.querySelector(".slider-nextBtn");
+let sliders = document.querySelector(".sliders"),
+	slide = document.querySelectorAll(".sliders li"),
+	currentIdx = 0,
+	slideCnt = slide.length,
+	slideWidth = 300,
+	slideMargin = 30,
+	prevBtn = document.querySelector(".prev"),
+	nextBtn = document.querySelector(".next");
 
-prev.addEventListener("click", function () {
-	slider.style.transform = "translate(0vw)";
+sliders.style.width = (slideWidth + slideMargin) * slideCnt - slideMargin + "px";
+
+function moveSlide(num) {
+	sliders.style.left = -num * 330 + "px";
+	currentIdx = num;
+}
+
+prevBtn.addEventListener("click", function () {
+	if (currentIdx > 0) {
+		moveSlide(currentIdx - 1);
+	} else {
+		currentIdx = slideCnt - 3;
+	}
 });
 
-next.addEventListener("click", function () {
-	slider.style.transform = "translate(-100vw)";
+nextBtn.addEventListener("click", function () {
+	if (currentIdx < slideCnt - 3) {
+		moveSlide(currentIdx + 1);
+	} else {
+		currentIdx = 0;
+	}
 });
