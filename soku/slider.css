@@ -33,6 +33,7 @@
 	height: 300px;
 	margin: 0 auto;
 	overflow: hidden;
+	border-radius: 30px;
 }
 .sliders {
 	display: flex;
@@ -44,6 +45,7 @@
 .sliders img {
 	width: 300px;
 	height: 300px;
+	border-radius: 30px;
 }
 .sliders li:not(:last-child) {
 	margin-right: 30px;
@@ -59,6 +61,7 @@
 	font-size: 40px;
 	color: #f2ab39;
 	margin: 0px 10px;
+	cursor: pointer;
 }
 
 .controls span.prev {

@@ -46,16 +46,18 @@ main {
 .content {
 	width: 100%;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 30px;
 }
 
 .content-list {
-	width: 500px;
+	width: 960px;
 	display: flex;
-	padding: 20px;
+	padding: 25px;
 	margin: 0px 30px;
+	margin-bottom: 30px;
 	border-radius: 50px;
 	box-shadow: 5px 5px 10px #bcbcbc;
 	transition: all 0.3s ease-in-out;
@@ -68,7 +70,7 @@ main {
 .content-list__img {
 	width: 200px;
 	height: 200px;
-	border-radius: 50px;
+	border-radius: 40px;
 }
 
 .content-list__text {
@@ -136,6 +138,8 @@ footer {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	width: 80%;
+	padding: 0px 20px;
 }
 .more_info {
 	display: flex;

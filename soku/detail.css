@@ -1,0 +1,100 @@
+@import "reset.css";
+@import "header.css";
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600;700&family=Kirang+Haerang&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cute+Font&display=swap");
+
+body,
+html {
+	height: 200vh;
+	font-family: "Cute Font", cursive;
+}
+* {
+	box-sizing: border-box;
+	font-family: "Cute Font", cursive;
+}
+
+.nav {
+	font-family: "Exo", sans-serif;
+	position: fixed;
+	height: 80px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	z-index: 0;
+	padding: 0px 40px;
+}
+.logo {
+	font-size: 2.5rem;
+}
+.nav-right__item a {
+	font-size: 1.7rem;
+}
+.search-bar__item {
+	width: 70%;
+	box-shadow: 2px 2px 5px #bcbcbc;
+}
+.search-bar__btn {
+	width: 20%;
+	box-shadow: 2px 2px 5px #bcbcbc;
+}
+
+.top_img {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+.top_img img {
+	width: 250px;
+	height: 250px;
+	margin-right: 10px;
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #bcbcbc;
+}
+
+section {
+	width: 100%;
+	z-index: -1;
+	position: relative;
+	top: 60px;
+	padding: 40px;
+}
+
+.title-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 50px;
+	color: #f2ab39;
+	margin: 50px 0px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #bcbcbc;
+}
+
+.rating {
+	color: #bcbcbc;
+	margin-left: 10px;
+}
+.detail_description {
+	font-size: 25px;
+	color: #bcbcbc;
+}
+.detail_icons span {
+	font-size: 30px;
+	margin-right: 10px;
+}
+
+.cnt {
+	display: flex;
+	align-items: center;
+	font-size: 18px;
+	color: #bcbcbc;
+	margin-top: 30px;
+}
+
+.cnt span {
+	margin-right: 10px;
+}
+.cnt i {
+	margin-right: 5px;
+}
