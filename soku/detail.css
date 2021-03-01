@@ -63,7 +63,7 @@ section {
 	align-items: center;
 	justify-content: space-between;
 	font-size: 30px;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 }
 
 .rating {
@@ -108,6 +108,22 @@ section {
 	padding-bottom: 30px;
 	border-bottom: 2px solid #e9e9e9;
 }
-.detail_description div {
-	margin: 10px 0px;
+
+.info {
+	width: 100%;
+}
+
+.info tr {
+	display: flex;
+	align-items: center;
+	padding: 10px 0px;
+}
+
+.info th {
+	width: 120px;
+	text-align: left;
+}
+.info td {
+	color: #757575;
+	font-size: 25px;
 }
