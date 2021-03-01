@@ -6,10 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>detail page</title>
 		<link rel="stylesheet" href="main.css" />
+		<script defer src="./main.js"></script>
 		<script defer src="https://kit.fontawesome.com/93cf0078c1.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
-		<div class="nav">
+		<header class="nav">
 			<div class="nav-left">
 				<div class="logo">logo</div>
 			</div>
@@ -21,9 +22,23 @@
 			<div class="nav-right">
 				<div class="nav-right__item"><a href="#">link1</a></div>
 				<div class="nav-right__item"><a href="#">link2</a></div>
-				<img class="profile_img" src="thunder.png" alt="프로필이미지" />
+				<div class="action">
+					<div class="profile" onclick="toggleMenu()">
+						<img src="thunder.png" alt="프로필이미지" />
+					</div>
+					<div class="menu">
+						<h3>profile <br /><span>description</span></h3>
+						<ul>
+							<li><img src="./image/01.jpg" alt="" /><a href="#">My profile</a></li>
+							<li><img src="./image/01.jpg" alt="" /><a href="#">My profile</a></li>
+							<li><img src="./image/01.jpg" alt="" /><a href="#">My profile</a></li>
+							<li><img src="./image/01.jpg" alt="" /><a href="#">My profile</a></li>
+							<li><img src="./image/01.jpg" alt="" /><a href="#">My profile</a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
-		</div>
+		</header>
 		<section>
 			<div class="top_img">
 				<img src="./image/01.jpg" alt="" />
@@ -39,7 +54,9 @@
 							<span class="restaurant_name">패스트리부티크</span>
 							<span class="rating">4.6</span>
 						</div>
-						<i class="far fa-bookmark"> </i>
+						<div class="book-mark">
+							<i class="far fa-bookmark"></i>
+						</div>
 					</div>
 					<div class="detail_addr">서울신라호텔</div>
 					<div class="cnt">

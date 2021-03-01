@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="/profile.css" />
+	</head>
+	<body>
+		<div class="action">
+			<div class="profile" onclick="toggleMenu()">
+				<img src="/thunder.png" alt="" />
+			</div>
+			<div class="menu">
+				<h3>My profile <br /><span>front end</span></h3>
+				<ul>
+					<li><img src="./image/01.jpg" alt="" /><a href="#">My profile</a></li>
+					<li><img src="./image/01.jpg" alt="" /><a href="#">My profile</a></li>
+					<li><img src="./image/01.jpg" alt="" /><a href="#">My profile</a></li>
+					<li><img src="./image/01.jpg" alt="" /><a href="#">My profile</a></li>
+					<li><img src="./image/01.jpg" alt="" /><a href="#">My profile</a></li>
+				</ul>
+			</div>
+		</div>
+		<script>
+			function toggleMenu() {
+				const menu = document.querySelector(".menu");
+				menu.classList.toggle("toggle");
+			}
+		</script>
+	</body>
+</html>
