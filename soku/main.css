@@ -1,5 +1,6 @@
 @import "reset.css";
 @import "header.css";
+@import "detail.css";
 @import "slider.css";
 @import url("https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600;700&family=Kirang+Haerang&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cute+Font&display=swap");
@@ -11,10 +12,12 @@
 
 main {
 	position: relative;
-	top: 240px;
+	top: 100px;
 	z-index: 0;
 }
 
+.nav {
+}
 .content-category {
 	display: flex;
 	align-items: center;
@@ -90,18 +93,16 @@ main {
 }
 
 footer {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-family: "Exo", sans-serif;
 	font-size: 4rem;
-	position: relative;
 	height: 200px;
-	width: 100%;
 	color: #f2ab39;
 	text-shadow: 2px 2px 5px#69491a;
 	background-image: url("./image/hg2.jpg");
-	background-color: #bcbcbc;
 	top: 300px;
 }
 

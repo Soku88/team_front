@@ -1,41 +1,14 @@
 @import "reset.css";
-@import "header.css";
 @import url("https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600;700&family=Kirang+Haerang&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cute+Font&display=swap");
 
-body,
-html {
-	height: 200vh;
-	font-family: "Cute Font", cursive;
-}
 * {
 	box-sizing: border-box;
-	font-family: "Cute Font", cursive;
 }
 
-.nav {
-	font-family: "Exo", sans-serif;
-	position: fixed;
-	height: 80px;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	z-index: 0;
-	padding: 0px 40px;
-}
-.logo {
-	font-size: 2.5rem;
-}
-.nav-right__item a {
-	font-size: 1.7rem;
-}
-.search-bar__item {
-	width: 70%;
-	box-shadow: 2px 2px 5px #bcbcbc;
-}
-.search-bar__btn {
-	width: 20%;
-	box-shadow: 2px 2px 5px #bcbcbc;
+body,
+html {
+	font-family: "Cute Font", cursive;
 }
 
 .top_img {
@@ -53,29 +26,52 @@ html {
 }
 
 section {
-	width: 100%;
 	z-index: -1;
 	position: relative;
 	top: 60px;
 	padding: 40px;
 }
 
+.section-wrapper {
+	width: 100%;
+	display: flex;
+	padding: 50px;
+}
 .title-wrap {
+	width: 70%;
+	margin-right: 50px;
+}
+.map-section {
+	width: 30%;
+}
+.map-img img {
+	width: 100%;
+}
+.title {
+	display: flex;
+	color: #f2ab39;
+}
+
+.title span {
+	font-size: 50px;
+}
+
+.detail_title {
+	color: #f2ab39;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	font-size: 50px;
-	color: #f2ab39;
-	margin: 50px 0px;
-	padding-bottom: 30px;
-	border-bottom: 1px solid #bcbcbc;
+	font-size: 30px;
+	margin-bottom: 30px;
 }
 
 .rating {
 	color: #bcbcbc;
 	margin-left: 10px;
+	font-size: 50px;
 }
-.detail_description {
+.detail_addr {
 	font-size: 25px;
 	color: #bcbcbc;
 }
@@ -89,7 +85,9 @@ section {
 	align-items: center;
 	font-size: 18px;
 	color: #bcbcbc;
-	margin-top: 30px;
+	margin-top: 15px;
+	padding-bottom: 30px;
+	border-bottom: 2px solid #e9e9e9;
 }
 
 .cnt span {
@@ -97,4 +95,19 @@ section {
 }
 .cnt i {
 	margin-right: 5px;
+}
+
+.review_comment {
+	font-size: 25px;
+}
+
+.detail_description {
+	font-size: 25px;
+	margin: 30px 0px;
+	color: #bcbcbc;
+	padding-bottom: 30px;
+	border-bottom: 2px solid #e9e9e9;
+}
+.detail_description div {
+	margin: 10px 0px;
 }

@@ -2,13 +2,30 @@
 	box-sizing: border-box;
 }
 
-header {
+.nav {
+	font-family: "Exo", sans-serif;
 	position: fixed;
+	top: 0;
+	display: flex;
+	align-items: center;
+	padding: 20px 40px;
+	height: 80px;
 	width: 100%;
-	height: 30%;
-	background-image: url("./image/hg2.jpg");
-	object-fit: fill;
 	z-index: 1;
+}
+.nav-left {
+	width: 50%;
+}
+
+.nav-right {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.nav-right__item {
+	margin-right: 30px;
 }
 
 .profile_img {
@@ -27,28 +44,6 @@ header {
 	height: 50px;
 	border-radius: 25px;
 }
-
-.nav {
-	display: flex;
-	align-items: center;
-	padding: 20px 40px;
-	height: 50%;
-}
-.nav-left {
-	width: 50%;
-}
-
-.nav-right {
-	width: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-}
-
-.nav-right__item {
-	margin-right: 30px;
-}
-
 .nav-right__item a {
 	text-decoration: none;
 	font-size: 1.5rem;
@@ -67,13 +62,17 @@ header {
 	z-index: 0;
 }
 .search-bar__item {
+	width: 70%;
 	height: 40px;
-	width: 30%;
 	border-style: none;
 	border-radius: 20px;
 	text-align: center;
-	box-shadow: 3px 3px #69491a;
 	font-size: 1.1rem;
+	box-shadow: 2px 2px 5px#69491a;
+}
+.search-bar__btn {
+	width: 20%;
+	box-shadow: 2px 2px 5px#69491a;
 }
 
 input::placeholder {
@@ -84,10 +83,9 @@ input::placeholder {
 	position: relative;
 	left: -35px;
 	height: 40px;
-	width: 10%;
+	width: 20%;
 	border-style: none;
 	border-radius: 20px;
-	box-shadow: 3px 3px #69491a;
 	background-color: #ffd954;
 	color: #69491a;
 	font-size: 1.5rem;
