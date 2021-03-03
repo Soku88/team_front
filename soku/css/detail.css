@@ -15,10 +15,11 @@ html {
 
 .top_img {
 	position: relative;
+	top: 50px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 }
 .top_img img {
 	width: 250px;
@@ -28,55 +29,61 @@ html {
 	box-shadow: 5px 5px 5px #bcbcbc;
 	cursor: pointer;
 }
-.more_info {
+.more_photo {
+	font-size: 20px;
 	position: absolute;
 	bottom: 20px;
 	right: 60px;
-	padding: 5px;
+	padding: 10px;
 	border-radius: 20px;
 	background: rgba(0, 0, 0, 0.4);
 	transition: all 0.3s;
+	cursor: pointer;
 }
 
-.more_info a {
-	width: 100px;
+.more_photo a {
+	text-decoration: none;
+	width: 70px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	color: #aeaeae;
 }
-.more_info:hover {
+.more_photo:hover {
 	background-color: #fed954;
 }
 
 section {
-	top: 60px;
+	position: relative;
 	padding: 40px;
 }
 
 .section-wrapper {
 	min-width: 1100px;
 	display: flex;
+	justify-content: space-between;
 	padding: 50px;
 }
 /* section media query */
 
 .title-wrap {
-	width: 70%;
+	width: 100%;
+	margin-left: 20px;
 	margin-right: 50px;
 }
 .map-section {
 	width: 30%;
-	min-width: 300px;
+	min-width: 350px;
+	margin-right: 20px;
 }
 .map-img img {
-	width: 300px;
-	height: 300px;
+	width: 350px;
+	height: 350px;
 	object-fit: cover;
 }
 
 .map-modal-wrapper {
 	position: relative;
-	/* display: none; */
 }
 .map-modal {
 	position: fixed;
@@ -94,7 +101,7 @@ section {
 .map-modal-img img {
 	min-width: 700px;
 	width: 80%;
-	height: 70%;
+	height: 80%;
 	object-fit: cover;
 	top: 50%;
 	left: 50%;
@@ -229,17 +236,145 @@ section {
 }
 
 .modal .modal-img img {
-	width: 400px;
-	height: 400px;
+	width: 100%;
+	max-width: 700px;
+	max-height: 400px;
 	object-fit: cover;
-	position: absolute;
-	padding: 50px;
+	margin: 30px 0px;
+	border-radius: 20px;
+	/* position: absolute; */
 }
 .modal {
+	/* position: relative; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
 	margin-top: 30px;
 	width: 70%;
-	height: 70%;
-	position: relative;
+	height: 90%;
 	background: white;
 	border-radius: 40px;
+}
+
+.modal-img__items {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-bottom: 30px;
+}
+.modal-img__items img {
+	margin-right: 5px;
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+}
+
+.review-form {
+	height: 100%;
+	width: 100%;
+}
+.review-wrap {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 1;
+	display: none;
+	/* opacity: 0; */
+}
+.review-open {
+	display: flex;
+	opacity: 1;
+}
+.review-text {
+	padding: 30px;
+	background: white;
+	border-radius: 20px;
+	width: 300px;
+	height: 100%;
+}
+
+.review-text form {
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	justify-content: center;
+}
+
+.label-wrap {
+	color: #f1ab3a;
+	font-size: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+.radio-label {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.5s ease-in-out;
+	text-align: center;
+	width: 80px;
+	padding: 10px 0px;
+}
+
+.radio-label:hover {
+	color: #69491a;
+}
+.radio-label input[type="radio"] {
+	display: none;
+}
+.radio-label input[type="radio"]:checked + div {
+	padding: 10px 0px;
+	background: #f1ab3a;
+	color: white;
+	width: 80px;
+	border-radius: 15px;
+}
+
+.radio-label i {
+	margin-bottom: 10px;
+}
+.form-item {
+	margin-bottom: 20px;
+	border: none;
+	box-shadow: 3px 3px 5px gray;
+	height: 30px;
+	font-size: 20px;
+	text-align: left;
+}
+
+.form-item.form-title {
+	width: 100%;
+	border-radius: 10px;
+}
+
+.form-item.form-text {
+	width: 100%;
+	height: 200px;
+	border-radius: 10px;
+}
+
+.form-item.form-submit {
+	border-radius: 10px;
+	text-align: center;
+	background: #fed954;
+	color: #69491a;
+	transition: all 0.5s ease-in-out;
+}
+
+.form-item.form-submit:hover {
+	background: #f1ab3a;
 }

@@ -117,15 +117,15 @@
 	/* justify-content: center; */
 }
 
-.action .menu ul li img {
+.action .menu ul li i {
 	max-width: 30px;
-	margin-right: 10px;
-	opacity: 0.5;
+	margin-right: 15px;
+	color: #69491a;
 	transition: 0.5s;
 }
 
-.action .menu ul li:hover img {
-	opacity: 1;
+.action .menu ul li:hover i {
+	color: #f2ab39;
 }
 
 .action .menu ul li a {
@@ -136,7 +136,7 @@
 }
 
 .action .menu ul li:hover a {
-	color: #fff;
+	color: #f2ab39;
 }
 
 .nav-right__item a {
@@ -168,10 +168,6 @@
 	box-shadow: 2px 2px 5px#69491a;
 }
 
-input::placeholder {
-	color: #69491a;
-	font-family: "Exo", sans-serif;
-}
 .search-bar__btn {
 	position: relative;
 	left: -35px;

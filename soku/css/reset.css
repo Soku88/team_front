@@ -86,6 +86,7 @@ button {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	/* font-family: "Exo", sans-serif; */
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -101,12 +102,7 @@ nav,
 section {
 	display: block;
 }
-body,
-html {
-	font-family: "Exo", sans-serif;
-	line-height: 1;
-	/* height: 500vh; */
-}
+
 ol,
 ul {
 	list-style: none;
@@ -126,6 +122,11 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-input:focus {
+input,
+textarea {
+	font-family: "Cute Font", cursive;
+}
+input:focus,
+textarea:focus {
 	outline: none;
 }

@@ -54,6 +54,11 @@
 	background: rgba(0, 0, 0, 0.05);
 	color: #f1ab3a;
 }
+.regdate {
+	margin-bottom: 10px;
+	font-size: 22px;
+	color: #bcbcbc;
+}
 
 .review-item__items .review-user img {
 	width: 50px;

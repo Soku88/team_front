@@ -27,12 +27,12 @@
 						<img src="./image/thunder.png" alt="프로필이미지" />
 					</div>
 					<div class="menu">
-						<h3>profile <br /><span>description</span></h3>
+						<h3>user name <br /><span>regdate</span></h3>
 						<ul>
-							<li><img src="./image/01.jpg" alt="" /><a href="#">My profile</a></li>
-							<li><img src="./image/01.jpg" alt="" /><a href="#">Edit profile</a></li>
-							<li><img src="./image/01.jpg" alt="" /><a href="#">Setting</a></li>
-							<li><img src="./image/01.jpg" alt="" /><a href="#">log out</a></li>
+							<li><i class="fas fa-user-alt"></i><a href="#">My profile</a></li>
+							<li><i class="far fa-edit"></i><a href="#">Edit profile</a></li>
+							<li><i class="fas fa-cog"></i><a href="#">Setting</a></li>
+							<li><i class="fas fa-sign-out-alt"></i><a href="#">log in</a></li>
 						</ul>
 					</div>
 				</div>
@@ -45,12 +45,26 @@
 				<img src="./image/01.jpg" alt="" />
 				<img src="./image/01.jpg" alt="" />
 				<img src="./image/01.jpg" alt="" />
-				<button class="more_info"><a href="#">사진더보기</a></button>
+				<button class="more_photo"><a href="#">사진더보기</a></button>
 			</div>
 			<div class="modal-wrapper">
 				<div class="modal">
 					<div class="modal-img">
 						<img src="./image/01.jpg" alt="" />
+					</div>
+					<div class="modal-img__items">
+						<img src="./image/04.jpg" alt="" />
+						<img src="./image/04.jpg" alt="" />
+						<img src="./image/04.jpg" alt="" />
+						<img src="./image/04.jpg" alt="" />
+						<img src="./image/04.jpg" alt="" />
+						<img src="./image/04.jpg" alt="" />
+						<img src="./image/04.jpg" alt="" />
+						<img src="./image/04.jpg" alt="" />
+						<img src="./image/04.jpg" alt="" />
+						<img src="./image/04.jpg" alt="" />
+						<img src="./image/04.jpg" alt="" />
+						<img src="./image/04.jpg" alt="" />
 					</div>
 				</div>
 			</div>
@@ -61,7 +75,7 @@
 							<span class="restaurant_name">패스트리부티크</span>
 							<span class="rating">4.6</span>
 						</div>
-						<a class="wrate-review" href="#">
+						<a class="wrate-review" href="#" onclick="reviewModalHandle()">
 							<i class="fas fa-pencil-alt"></i>
 							<div>리뷰쓰기</div>
 						</a>
@@ -133,6 +147,7 @@
 										<img src="./image/bg.jpeg" alt="" />
 									</div>
 									<div class="review-content">
+										<div class="regdate">2021-03-03</div>
 										<p>
 											Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ducimus illo beatae molestiae
 											earum animi est, consequuntur sunt iusto culpa, ab facere, in excepturi molestias. Soluta illo ex
@@ -160,6 +175,41 @@
 					</div>
 					<div class="map-img" onclick="mapModalHandle()">
 						<img class="map-modal-img" src="./image/map.png" alt="" />
+					</div>
+				</div>
+			</div>
+			<div class="review-wrap">
+				<div class="review-modal">
+					<div class="review-text">
+						<form class="review-form" action="">
+							<div class="label-wrap">
+								<label class="radio-label" for="option1">
+									<input type="radio" value="option1" name="radio-box" id="option1" />
+									<div>
+										<i class="far fa-laugh-squint"></i>
+										<div>좋았다</div>
+									</div>
+								</label>
+								<label class="radio-label" for="option2">
+									<input type="radio" value="option2" name="radio-box" id="option2" />
+									<div>
+										<i class="far fa-laugh-squint"></i>
+										<div>보통이다</div>
+									</div>
+								</label>
+								<label class="radio-label" for="option3">
+									<input type="radio" value="option3" name="radio-box" id="option3" />
+									<div>
+										<i class="far fa-laugh-squint"></i>
+										<div>별로였다</div>
+									</div>
+								</label>
+							</div>
+
+							<input class="form-item form-title" type="text" placeholder="제목" />
+							<textarea class="form-item form-text" type="text" placeholder="내용"></textarea>
+							<input class="form-item form-submit" type="submit" value="등록" onclick="reviewModalHandle()" />
+						</form>
 					</div>
 				</div>
 			</div>

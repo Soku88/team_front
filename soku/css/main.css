@@ -7,10 +7,10 @@
 
 * {
 	box-sizing: border-box;
-	font-family: "Cute Font", cursive;
 }
 
 main {
+	height: 100%;
 	position: relative;
 	top: 100px;
 	z-index: 0;
@@ -97,11 +97,11 @@ footer {
 	justify-content: center;
 	font-family: "Exo", sans-serif;
 	font-size: 4rem;
-	height: 200px;
+	height: 250px;
 	color: #f2ab39;
 	text-shadow: 2px 2px 5px#69491a;
 	background-image: url("../image/hg2.jpg");
-	top: 300px;
+	top: 150px;
 }
 
 .text_title {
