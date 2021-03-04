@@ -73,12 +73,11 @@
 }
 
 .review-item__items .review-icon {
-	height: 100%;
 	font-size: 30px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	color: #f1ab3a;
 }
 

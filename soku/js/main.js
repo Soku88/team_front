@@ -1,9 +1,9 @@
 const modal = document.querySelector(".modal-wrapper");
 const mapModal = document.querySelector(".map-modal");
 const mapModalImg = document.querySelector(".map-modal-img");
-const menu = document.querySelector(".menu");
 const review = document.querySelector(".review-wrap");
 
+const menu = document.querySelector(".menu");
 // profile toggle
 function toggleMenu() {
 	menu.classList.toggle("toggle");

@@ -52,20 +52,6 @@
 					<div class="modal-img">
 						<img src="./image/01.jpg" alt="" />
 					</div>
-					<div class="modal-img__items">
-						<img src="./image/04.jpg" alt="" />
-						<img src="./image/04.jpg" alt="" />
-						<img src="./image/04.jpg" alt="" />
-						<img src="./image/04.jpg" alt="" />
-						<img src="./image/04.jpg" alt="" />
-						<img src="./image/04.jpg" alt="" />
-						<img src="./image/04.jpg" alt="" />
-						<img src="./image/04.jpg" alt="" />
-						<img src="./image/04.jpg" alt="" />
-						<img src="./image/04.jpg" alt="" />
-						<img src="./image/04.jpg" alt="" />
-						<img src="./image/04.jpg" alt="" />
-					</div>
 				</div>
 			</div>
 			<div class="section-wrapper">
@@ -82,9 +68,8 @@
 					</div>
 					<div class="detail_addr">서울신라호텔</div>
 					<div class="cnt">
-						<span class="view_cnt"><i class="fas fa-eye"></i>조회수</span>
-						<span class="review_cnt"><i class="fas fa-pen"></i>리뷰수</span>
-						<span class="like_cnt"><i class="fas fa-star"></i>좋아요수</span>
+						<span class="view_cnt"><i class="fas fa-eye"></i>300</span>
+						<span class="review_cnt"><i class="fas fa-pen"></i>50</span>
 					</div>
 					<div class="detail_description">
 						<table class="info">
@@ -140,32 +125,37 @@
 								</li>
 							</ul>
 						</div>
-						<ul class="review-list">
-							<li class="review-item">
-								<div class="review-item__items">
-									<div class="review-user">
-										<img src="./image/bg.jpeg" alt="" />
-									</div>
-									<div class="review-content">
+						<table>
+							<tbody>
+								<tr class="table-wrapper">
+									<td class="table-profile-img">
+										<div class="wrap">
+											<img src="./image/hg2.jpg" alt="" />
+											<div class="name">장원석</div>
+										</div>
+									</td>
+									<td class="content">
 										<div class="regdate">2021-03-03</div>
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ducimus illo beatae molestiae
-											earum animi est, consequuntur sunt iusto culpa, ab facere, in excepturi molestias. Soluta illo ex
-											dolorum corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ducimus illo
-											beatae molestiae earum animi est, consequuntur sunt iusto culpa, ab facere, in excepturi
-											molestias. Soluta illo ex dolorum corporis.
-										</p>
-									</div>
-									<div class="review-icon">
-										<i class="far fa-laugh-squint"></i>
-										<div>좋았다</div>
-									</div>
-								</div>
-							</li>
-						</ul>
+										<div class="content-text">ddd</div>
+									</td>
+									<td class="icon">
+										<div class="review-icon">
+											<div class="delMod-wrap">
+												<div class="del">
+													<a href=""><i class="far fa-laugh-squint"></i></a>
+												</div>
+												<div class="mod">
+													<a href="" onclick=""><i class="far fa-laugh-squint"></i></a>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
-				<div class="map-section">
+				<aside class="map-section">
 					<div class="map-modal-wrapper">
 						<div class="map-modal">
 							<div class="map-modal-img">
@@ -176,7 +166,7 @@
 					<div class="map-img" onclick="mapModalHandle()">
 						<img class="map-modal-img" src="./image/map.png" alt="" />
 					</div>
-				</div>
+				</aside>
 			</div>
 			<div class="review-wrap">
 				<div class="review-modal">
@@ -205,8 +195,6 @@
 									</div>
 								</label>
 							</div>
-
-							<input class="form-item form-title" type="text" placeholder="제목" />
 							<textarea class="form-item form-text" type="text" placeholder="내용"></textarea>
 							<input class="form-item form-submit" type="submit" value="등록" onclick="reviewModalHandle()" />
 						</form>

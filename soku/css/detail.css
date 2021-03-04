@@ -176,6 +176,7 @@ section {
 .cnt {
 	display: flex;
 	align-items: center;
+	justify-content: flex-start;
 	font-size: 18px;
 	color: #bcbcbc;
 	margin-top: 15px;
@@ -237,6 +238,7 @@ section {
 
 .modal .modal-img img {
 	width: 100%;
+	height: 100%;
 	max-width: 700px;
 	max-height: 400px;
 	object-fit: cover;
@@ -249,11 +251,10 @@ section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-around;
-	margin-top: 30px;
+	justify-content: center;
 	width: 70%;
 	height: 90%;
-	background: white;
+	background: #aeaeae;
 	border-radius: 40px;
 }
 
@@ -308,7 +309,7 @@ section {
 	display: flex;
 	flex-direction: column;
 	align-items: left;
-	justify-content: center;
+	justify-content: space-around;
 }
 
 .label-wrap {
@@ -317,7 +318,7 @@ section {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 .radio-label {
 	display: flex;
@@ -377,4 +378,80 @@ section {
 
 .form-item.form-submit:hover {
 	background: #f1ab3a;
+}
+
+.delMod-wrap {
+	height: 100%;
+	display: flex;
+	align-items: flex-end;
+	font-size: 25px;
+}
+
+.delMod-wrap a {
+	text-decoration: none;
+	color: #69491a;
+	padding: 5px;
+}
+
+/* 리뷰 css */
+
+table {
+	width: 100%;
+}
+.table-wrapper {
+	display: flex;
+	margin-bottom: 30px;
+	border-bottom: 2px solid #e9e9e9;
+	margin-bottom: 30px;
+}
+.delMod-wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.del a {
+	margin-right: 10px;
+}
+.name {
+	margin-top: 10px;
+}
+.table-profile-img {
+	width: 10%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.review-content {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	/* margin-bottom: 10px; */
+	padding: 0px 20px;
+}
+.icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 10%;
+}
+.profile-img img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.regdate {
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+.wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.content:hover {
+	background: rgba(0, 0, 0, 0.05);
+	border-radius: 20px;
 }
