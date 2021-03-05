@@ -1,22 +1,5 @@
-.slider {
-	width: 300vw;
-	transition: all 0.7s;
-}
-.slider-hidden {
-	overflow: hidden;
-}
 .img-slider {
 	width: 100vw;
-	float: left;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.img-slider img {
-	height: 300px;
-	width: 300px;
-	margin: 10px;
-	border-radius: 40px;
 }
 .img-slider button {
 	margin: 20px;
@@ -30,10 +13,13 @@
 .slider-wrapper {
 	position: relative;
 	width: 100%;
-	height: 300px;
-	margin: 0 auto;
-	overflow: hidden;
-	border-radius: 30px;
+	height: 200px;
+	margin-bottom: 30px;
+	/* overflow: hidden; */
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	background-image: url("../image/hg2.jpg");
 }
 .sliders {
 	display: flex;
@@ -43,25 +29,34 @@
 	transition: left 0.5s ease-out;
 }
 .sliders img {
-	width: 300px;
+	width: 100%;
 	height: 300px;
-	border-radius: 30px;
+	object-fit: fill;
 }
 .sliders li:not(:last-child) {
 	margin-right: 30px;
 }
 
 .controls {
-	text-align: center;
-	margin-top: 30px;
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	width: 80%;
 }
 
 .controls span {
 	border-radius: 50%;
-	font-size: 40px;
+	font-size: 50px;
 	color: #f2ab39;
 	margin: 0px 10px;
 	cursor: pointer;
+	opacity: 0.8;
+	transition: all 0.5s ease-in-out;
+}
+.controls span:hover {
+	/* color: #69491a; */
+	opacity: 1;
+	transform: scale(1.3);
 }
 
 .controls span.prev {

@@ -60,6 +60,12 @@
 	color: #bcbcbc;
 }
 
+.review-item__items .review-user {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
 .review-item__items .review-user img {
 	width: 50px;
 	height: 50px;
@@ -68,19 +74,70 @@
 }
 
 .review-item__items .review-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 	max-width: 70%;
+	width: 70%;
 	font-size: 25px;
 }
 
 .review-item__items .review-icon {
-	font-size: 30px;
+	font-size: 20px;
 	display: flex;
 	flex-direction: column;
+	justify-content: flex-start;
 	align-items: center;
-	justify-content: center;
+	float: right;
 	color: #f1ab3a;
 }
 
-.review-item__items .review-icon i {
-	margin-bottom: 10px;
+/* 리뷰 아이콘 수정부분 - soku */
+
+.review-icon {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.review-icon div button {
+	background: none;
+	margin-bottom: 20px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #f1ab3a;
+	transition: all 0.5s ease-in-out;
+}
+
+.review-icon div button:focus {
+	outline: none;
+}
+
+.review-icon div button:hover {
+	color: #69491a;
+}
+
+.more-review-list {
+	font-size: 20px;
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.more-review-list button {
+	cursor: pointer;
+	background: none;
+	color: #919191;
+	transition: all 0.5s ease-in-out;
+}
+
+.more-review-list button:hover {
+	color: #69491a;
+}
+
+.more-review-list button:focus {
+	outline: none;
 }

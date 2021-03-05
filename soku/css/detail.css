@@ -1,10 +1,15 @@
-@import "./reset.css";
 @import "./review.css";
+@import "./chat-modal.css";
 @import url("https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600;700&family=Kirang+Haerang&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cute+Font&display=swap");
 
 * {
 	box-sizing: border-box;
+}
+
+input,
+textarea {
+	font-family: "Cute Font", cursive;
 }
 
 body,
@@ -14,6 +19,7 @@ html {
 }
 
 .top_img {
+	width: 100%;
 	position: relative;
 	top: 50px;
 	display: flex;
@@ -21,36 +27,14 @@ html {
 	justify-content: center;
 	margin-bottom: 50px;
 }
+
+/* 탑이미지 크기 25%수정 */
 .top_img img {
-	width: 250px;
-	height: 250px;
+	width: 25%;
 	margin-right: 10px;
 	border-radius: 20px;
 	box-shadow: 5px 5px 5px #bcbcbc;
 	cursor: pointer;
-}
-.more_photo {
-	font-size: 20px;
-	position: absolute;
-	bottom: 20px;
-	right: 60px;
-	padding: 10px;
-	border-radius: 20px;
-	background: rgba(0, 0, 0, 0.4);
-	transition: all 0.3s;
-	cursor: pointer;
-}
-
-.more_photo a {
-	text-decoration: none;
-	width: 70px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: #aeaeae;
-}
-.more_photo:hover {
-	background-color: #fed954;
 }
 
 section {
@@ -72,6 +56,7 @@ section {
 	margin-right: 50px;
 }
 .map-section {
+	position: relative;
 	width: 30%;
 	min-width: 350px;
 	margin-right: 20px;
@@ -238,7 +223,6 @@ section {
 
 .modal .modal-img img {
 	width: 100%;
-	height: 100%;
 	max-width: 700px;
 	max-height: 400px;
 	object-fit: cover;
@@ -251,10 +235,11 @@ section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-around;
+	margin-top: 30px;
 	width: 70%;
 	height: 90%;
-	background: #aeaeae;
+	background: white;
 	border-radius: 40px;
 }
 
@@ -274,6 +259,7 @@ section {
 	object-fit: cover;
 }
 
+/* 작성모달 */
 .review-form {
 	height: 100%;
 	width: 100%;
@@ -309,8 +295,9 @@ section {
 	display: flex;
 	flex-direction: column;
 	align-items: left;
-	justify-content: space-around;
+	justify-content: center;
 }
+/* 작성 모달*/
 
 .label-wrap {
 	color: #f1ab3a;
@@ -318,7 +305,7 @@ section {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 .radio-label {
 	display: flex;
@@ -366,6 +353,7 @@ section {
 	width: 100%;
 	height: 200px;
 	border-radius: 10px;
+	resize: none;
 }
 
 .form-item.form-submit {
@@ -380,78 +368,68 @@ section {
 	background: #f1ab3a;
 }
 
-.delMod-wrap {
+/*임시 모달 css 테스트용  */
+/* 수정모달 css 디자인 - soku */
+#modal.hide {
+	display: none;
+}
+
+#modal {
+	width: 100%;
 	height: 100%;
-	display: flex;
-	align-items: flex-end;
-	font-size: 25px;
-}
-
-.delMod-wrap a {
-	text-decoration: none;
-	color: #69491a;
-	padding: 5px;
-}
-
-/* 리뷰 css */
-
-table {
-	width: 100%;
-}
-.table-wrapper {
-	display: flex;
-	margin-bottom: 30px;
-	border-bottom: 2px solid #e9e9e9;
-	margin-bottom: 30px;
-}
-.delMod-wrap {
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.4);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.del a {
-	margin-right: 10px;
-}
-.name {
-	margin-top: 10px;
-}
-.table-profile-img {
-	width: 10%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.review-content {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	/* margin-bottom: 10px; */
-	padding: 0px 20px;
-}
-.icon {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 10%;
-}
-.profile-img img {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-}
 
-.regdate {
-	margin-bottom: 20px;
-	font-size: 20px;
-}
-.wrap {
+#modal .modal-content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-}
-
-.content:hover {
-	background: rgba(0, 0, 0, 0.05);
+	justify-content: space-around;
+	background: white;
 	border-radius: 20px;
+	width: 300px;
+	height: 300px;
+	padding: 10px;
+}
+.modal-content span {
+	cursor: pointer;
+	color: #f1ab3a;
+	font-size: 25px;
+	transition: all 0.5s ease-in-out;
+}
+.modal-content span:hover {
+	color: #69491a;
+}
+.modBtn {
+	color: #69491a;
+	font-size: 25px;
+	border: none;
+	background: none;
+	cursor: pointer;
+	padding: 3px 20px;
+	border-radius: 10px;
+	background: #fed954;
+	box-shadow: 3px 3px 3px #757575;
+	transition: all 0.5s ease-in-out;
+}
+.modBtn:hover {
+	background-color: #69491a;
+	color: #f1ab3a;
+}
+.modCtnt {
+	width: 90%;
+	height: 50%;
+	color: #757575;
+	font-size: 25px;
+	border: none;
+	border-style: none;
+	resize: none;
+	border-radius: 10px;
+	box-shadow: 3px 3px 5px gray;
 }

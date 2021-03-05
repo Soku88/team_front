@@ -7,6 +7,7 @@
 		<title>detail page</title>
 		<link rel="stylesheet" href="./css/main.css" />
 		<script defer src="./js/main.js"></script>
+		<script defer src="./js/detail.js"></script>
 		<script defer src="https://kit.fontawesome.com/93cf0078c1.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
@@ -29,7 +30,6 @@
 					<div class="menu">
 						<h3>user name <br /><span>regdate</span></h3>
 						<ul>
-							<li><i class="fas fa-user-alt"></i><a href="#">My profile</a></li>
 							<li><i class="far fa-edit"></i><a href="#">Edit profile</a></li>
 							<li><i class="fas fa-cog"></i><a href="#">Setting</a></li>
 							<li><i class="fas fa-sign-out-alt"></i><a href="#">log in</a></li>
@@ -40,12 +40,14 @@
 		</header>
 		<section>
 			<div class="top_img" onclick="modalHandle()">
-				<img src="./image/01.jpg" alt="" />
-				<img src="./image/01.jpg" alt="" />
-				<img src="./image/01.jpg" alt="" />
-				<img src="./image/01.jpg" alt="" />
-				<img src="./image/01.jpg" alt="" />
-				<button class="more_photo"><a href="#">사진더보기</a></button>
+				<img src="./image/03.jpg" alt="" />
+				<img src="./image/03.jpg" alt="" />
+				<img src="./image/03.jpg" alt="" />
+				<img src="./image/03.jpg" alt="" />
+				<!-- <img src="${detail_item.m_img2}" alt="" />
+				<img src="${detail_item.m_img3}" alt="" />
+				<img src="${detail_item.m_img4}" alt="" />
+				<img src="${detail_item.m_img4}" alt="" /> -->
 			</div>
 			<div class="modal-wrapper">
 				<div class="modal">
@@ -58,104 +60,115 @@
 				<div class="title-wrap">
 					<div class="detail_title">
 						<div class="title">
-							<span class="restaurant_name">패스트리부티크</span>
-							<span class="rating">4.6</span>
+							<span class="restaurant_name">${detail_item.m_title}</span>
+							<span class="rating">${detail_item.m_starPoint}</span>
 						</div>
-						<a class="wrate-review" href="#" onclick="reviewModalHandle()">
-							<i class="fas fa-pencil-alt"></i>
-							<div>리뷰쓰기</div>
-						</a>
+						<c:if test="${loginUser != null}">
+							<a class="wrate-review" href="#" onclick="reviewModalHandle()">
+								<i class="fas fa-pencil-alt"></i>
+								<div>리뷰쓰기</div>
+							</a>
+						</c:if>
 					</div>
-					<div class="detail_addr">서울신라호텔</div>
 					<div class="cnt">
-						<span class="view_cnt"><i class="fas fa-eye"></i>300</span>
-						<span class="review_cnt"><i class="fas fa-pen"></i>50</span>
+						<span class="view_cnt"><i class="fas fa-eye"></i>${detail_item.m_viewCount}</span>
+						<span class="review_cnt"><i class="fas fa-pen"></i>${detail_item.m_commentCount}</span>
 					</div>
+					<div
+						id="data"
+						data-loginuserpk="${sessionScope.loginUser.u_Pk}"
+						data-pk="${requestScope.detail_item.m_pk}"
+					></div>
 					<div class="detail_description">
 						<table class="info">
-							<tr>
-								<th>주소</th>
-								<td>제주특별자치도 서귀포시 중앙로41번길 4 지번 제주 서귀포시 서귀동 294-10</td>
-							</tr>
-							<tr>
-								<th>전화번호</th>
-								<td>053-222-2222</td>
-							</tr>
-							<tr>
-								<th>음식종류</th>
-								<td>한식</td>
-							</tr>
-							<tr>
-								<th>가격대</th>
-								<td>2만원대</td>
-							</tr>
-							<tr>
-								<th>주차</th>
-								<td>무료주차</td>
-							</tr>
-							<tr>
-								<th>영업시간</th>
-								<td>12:00 ~ 22:00</td>
-							</tr>
-							<tr>
-								<th>마지막주문</th>
-								<td>21:00</td>
-							</tr>
-							<tr>
-								<th>휴일</th>
-								<td>일요일</td>
-							</tr>
+							<c:if test="${detail_item.m_addrRoad != null}">
+								<tr>
+									<th>주소</th>
+									<td>${detail_item.m_addrRoad}</td>
+								</tr>
+							</c:if>
+							<c:if test="${detail_item.m_addrJibun != null}">
+								<tr>
+									<th>지번</th>
+									<td>${detail_item.m_addrJibun}</td>
+								</tr>
+							</c:if>
+							<c:if test="${detail_item.m_phone != null}">
+								<tr>
+									<th>전화번호</th>
+									<td>${detail_item.m_phone}</td>
+								</tr>
+							</c:if>
+							<c:if test="${detail_item.m_category != null}">
+								<tr>
+									<th>음식종류</th>
+									<td>${detail_item.m_category}</td>
+								</tr>
+							</c:if>
+							<c:if test="${detail_item.m_price != null}">
+								<tr>
+									<th>가격대</th>
+									<td>${detail_item.m_price}</td>
+								</tr>
+							</c:if>
+							<c:if test="${detail_item.m_parking != null}">
+								<tr>
+									<th>주차</th>
+									<td>${detail_item.m_parking}</td>
+								</tr>
+							</c:if>
+							<c:if test="${detail_item.m_workingTime != null}">
+								<tr>
+									<th>영업시간</th>
+									<td>${detail_item.m_workingTime}</td>
+								</tr>
+							</c:if>
 						</table>
 					</div>
 					<div class="review">
 						<div class="review-head">
 							<h2 class="review-title"><a href="#">리뷰(total)</a></h2>
-							<ul>
-								<li>
-									<a href="#">전체(total)</a>
-								</li>
-								<li>
-									<a href="#">좋았다(total)</a>
-								</li>
-								<li>
-									<a href="#">보통이다(total)</a>
-								</li>
-								<li>
-									<a href="#">별로였다(total)</a>
-								</li>
-							</ul>
 						</div>
-						<table>
-							<tbody>
-								<tr class="table-wrapper">
-									<td class="table-profile-img">
-										<div class="wrap">
-											<img src="./image/hg2.jpg" alt="" />
-											<div class="name">장원석</div>
+						<ul id="cmtList">
+							<!-- 여기로 들어옴  -->
+							<li class="review-item">
+								<div class="review-item__items">
+									<div class="review-user">
+										<img src="./image/thunder.png" alt="" />
+										<div>user Name</div>
+									</div>
+									<div class="review-content">
+										<div class="regdate">2021-03-05</div>
+										<p>
+											L Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui facilis quam consequatur eum
+											accusantium impedit commodi ab similique vitae facere, natus eveniet, iusto sed ipsam eligendi
+											aliquam. Voluptate, rerum officiis. L Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+											facilis quam consequatur eum accusantium impedit commodi ab similique vitae facere, natus eveniet,
+											iusto sed ipsam eligendi aliquam. Voluptate, rerum officiis. L Lorem ipsum dolor sit amet
+											consectetur adipisicing elit. Qui facilis quam consequatur eum accusantium impedit commodi ab
+											similique vitae facere, natus eveniet, iusto sed ipsam eligendi aliquam. Voluptate, rerum
+											officiis. L Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui facilis quam consequatur
+											eum accusantium impedit commodi ab similique vitae facere, natus eveniet, iusto sed ipsam eligendi
+											aliquam. Voluptate, rerum officiis. L Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+											facilis quam consequatur eum accusantium impedit commodi ab similique vitae facere, natus eveniet,
+											iusto sed ipsam eligendi aliquam. Voluptate, rerum officiis.
+										</p>
+									</div>
+									<div class="review-icon">
+										<div>
+											<button><i class="fas fa-trash-alt"></i></button>
 										</div>
-									</td>
-									<td class="content">
-										<div class="regdate">2021-03-03</div>
-										<div class="content-text">ddd</div>
-									</td>
-									<td class="icon">
-										<div class="review-icon">
-											<div class="delMod-wrap">
-												<div class="del">
-													<a href=""><i class="far fa-laugh-squint"></i></a>
-												</div>
-												<div class="mod">
-													<a href="" onclick=""><i class="far fa-laugh-squint"></i></a>
-												</div>
-											</div>
+										<div>
+											<button><i class="fas fa-pencil-alt"></i></button>
 										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="more-review-list"><button id="moreList">더보기</button></div>
 					</div>
 				</div>
-				<aside class="map-section">
+				<div class="map-section">
 					<div class="map-modal-wrapper">
 						<div class="map-modal">
 							<div class="map-modal-img">
@@ -166,8 +179,20 @@
 					<div class="map-img" onclick="mapModalHandle()">
 						<img class="map-modal-img" src="./image/map.png" alt="" />
 					</div>
-				</aside>
+					<div class="chat-btn">
+						<button onclick="openChatModal()">채팅시작</button>
+					</div>
+					<div class="chat-modal-wrap">
+						<div class="chat-modal">
+							<div class="chat">
+								<button class="chat-close" onclick="closeChatModal()"><i class="fas fa-times"></i></button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
+
+			<!-- 리뷰 작성 모달  -->
 			<div class="review-wrap">
 				<div class="review-modal">
 					<div class="review-text">
@@ -195,10 +220,19 @@
 									</div>
 								</label>
 							</div>
-							<textarea class="form-item form-text" type="text" placeholder="내용"></textarea>
-							<input class="form-item form-submit" type="submit" value="등록" onclick="reviewModalHandle()" />
+							<textarea class="form-item form-text" type="text" placeholder="내용" id="rContent"></textarea>
+							<input class="form-item form-submit" type="button" value="등록" id="rWrite" />
 						</form>
 					</div>
+				</div>
+			</div>
+
+			<!-- 리뷰 수정 모달  -->
+			<div id="modal" class="hide">
+				<div class="modal-content">
+					<span id="modClose"><i class="fas fa-times"></i></span>
+					<textarea type="text" id="modCtnt" class="modCtnt"></textarea>
+					<input type="button" id="modBtn" class="modBtn" value="수정" />
 				</div>
 			</div>
 		</section>
