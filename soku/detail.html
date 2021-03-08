@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>detail page</title>
 		<link rel="stylesheet" href="./css/main.css" />
-		<script defer src="./js/main.js"></script>
+		<script defer src="./css/main.css"></script>
 		<script defer src="./js/detail.js"></script>
 		<script defer src="https://kit.fontawesome.com/93cf0078c1.js" crossorigin="anonymous"></script>
 	</head>
@@ -22,7 +22,9 @@
 			</form>
 			<div class="nav-right">
 				<div class="nav-right__item"><a href="#">link1</a></div>
-				<div class="nav-right__item"><a href="#">link2</a></div>
+				<div class="nav-right__item">
+					<button onclick="openChatModal()">link2</button>
+				</div>
 				<div class="action">
 					<div class="profile" onclick="toggleMenu()">
 						<img src="./image/thunder.png" alt="프로필이미지" />
@@ -63,12 +65,21 @@
 							<span class="restaurant_name">${detail_item.m_title}</span>
 							<span class="rating">${detail_item.m_starPoint}</span>
 						</div>
-						<c:if test="${loginUser != null}">
-							<a class="wrate-review" href="#" onclick="reviewModalHandle()">
-								<i class="fas fa-pencil-alt"></i>
-								<div>리뷰쓰기</div>
+						<div class="review-btn-wrap">
+							<a class="review-btn">
+								<c:if test="${loginUser != null}">
+									<a class="wrate-review" href="#" onclick="reviewModalHandle()">
+										<i class="fas fa-pencil-alt"></i>
+										<div>리뷰쓰기</div>
+									</a>
+								</c:if>
 							</a>
-						</c:if>
+							<!-- 찜하기버튼 추가 -->
+							<a class="like-btn" href="#">
+								<i class="fas fa-shopping-basket"></i>
+								<div>찜하기</div>
+							</a>
+						</div>
 					</div>
 					<div class="cnt">
 						<span class="view_cnt"><i class="fas fa-eye"></i>${detail_item.m_viewCount}</span>
@@ -142,16 +153,7 @@
 										<p>
 											L Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui facilis quam consequatur eum
 											accusantium impedit commodi ab similique vitae facere, natus eveniet, iusto sed ipsam eligendi
-											aliquam. Voluptate, rerum officiis. L Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
-											facilis quam consequatur eum accusantium impedit commodi ab similique vitae facere, natus eveniet,
-											iusto sed ipsam eligendi aliquam. Voluptate, rerum officiis. L Lorem ipsum dolor sit amet
-											consectetur adipisicing elit. Qui facilis quam consequatur eum accusantium impedit commodi ab
-											similique vitae facere, natus eveniet, iusto sed ipsam eligendi aliquam. Voluptate, rerum
-											officiis. L Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui facilis quam consequatur
-											eum accusantium impedit commodi ab similique vitae facere, natus eveniet, iusto sed ipsam eligendi
-											aliquam. Voluptate, rerum officiis. L Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
-											facilis quam consequatur eum accusantium impedit commodi ab similique vitae facere, natus eveniet,
-											iusto sed ipsam eligendi aliquam. Voluptate, rerum officiis.
+											aliquam. Vol
 										</p>
 									</div>
 									<div class="review-icon">
@@ -164,18 +166,43 @@
 									</div>
 								</div>
 							</li>
+							<li class="review-item">
+								<div class="review-item__items">
+									<div class="review-user">
+										<img src="./image/thunder.png" alt="" />
+										<div>user Name</div>
+									</div>
+									<div class="review-content">
+										<div class="regdate">2021-03-05</div>
+										<p>
+											L Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui facilis quam consequatur eum
+											accusantium impedit commodi ab similique vitae facere, natus eveniet, iusto sed ipsam eligendi
+											aliquam. Vol
+										</p>
+									</div>
+									<!-- <div class="review-icon">
+										<div>
+											<button><i class="fas fa-trash-alt"></i></button>
+										</div>
+										<div>
+											<button><i class="fas fa-pencil-alt"></i></button>
+										</div>
+									</div> -->
+									<div style="width: 20px"></div>
+								</div>
+							</li>
 						</ul>
 						<div class="more-review-list"><button id="moreList">더보기</button></div>
 					</div>
 				</div>
 				<div class="map-section">
-					<div class="map-modal-wrapper">
+					<!-- <div class="map-modal-wrapper">
 						<div class="map-modal">
 							<div class="map-modal-img">
 								<img src="./image/map.png" alt="" />
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="map-img" onclick="mapModalHandle()">
 						<img class="map-modal-img" src="./image/map.png" alt="" />
 					</div>
@@ -185,7 +212,34 @@
 					<div class="chat-modal-wrap">
 						<div class="chat-modal">
 							<div class="chat">
-								<button class="chat-close" onclick="closeChatModal()"><i class="fas fa-times"></i></button>
+								<!-- <button class="chat-close" onclick="closeChatModal()"><i class="fas fa-times"></i></button> -->
+								<div class="chat-wrapper">
+									<div class="chattWrap" id="container_chatt">
+										<h1>${detail_item.m_title}실시간채팅</h1>
+										<input type="hidden" id="sessionId" value="" /> <input type="hidden" id="h_userName" value="" />
+										<div id="chating" class="chating"></div>
+									</div>
+								</div>
+								<div id="yourMsg" class="yourMsg">
+									<div class="inputTable">
+										<div class="chat-wrap">
+											<div class="chat-ctnt">
+												<input id="chatting" type="text" placeholder="write message" />
+											</div>
+											<div class="chat-ctnt"><button onclick="send()" id="sendBtn">보내기</button></div>
+										</div>
+									</div>
+								</div>
+								<div id="yourName">
+									<div class="inputTable">
+										<div class="chat-wrap">
+											<div class="chat-ctnt">
+												<input type="text" name="userName" id="userName" value="${loginUser.u_Nm}" readonly />
+											</div>
+											<div class="chat-ctnt"><button onclick="chatName()" id="startBtn">입장</button></div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -197,7 +251,7 @@
 				<div class="review-modal">
 					<div class="review-text">
 						<form class="review-form" action="">
-							<div class="label-wrap">
+							<!-- <div class="label-wrap">
 								<label class="radio-label" for="option1">
 									<input type="radio" value="option1" name="radio-box" id="option1" />
 									<div>
@@ -219,7 +273,7 @@
 										<div>별로였다</div>
 									</div>
 								</label>
-							</div>
+							</div> -->
 							<textarea class="form-item form-text" type="text" placeholder="내용" id="rContent"></textarea>
 							<input class="form-item form-submit" type="button" value="등록" id="rWrite" />
 						</form>
@@ -230,9 +284,11 @@
 			<!-- 리뷰 수정 모달  -->
 			<div id="modal" class="hide">
 				<div class="modal-content">
-					<span id="modClose"><i class="fas fa-times"></i></span>
-					<textarea type="text" id="modCtnt" class="modCtnt"></textarea>
-					<input type="button" id="modBtn" class="modBtn" value="수정" />
+					<div class="modReview-modal">
+						<div id="modClose"><i class="fas fa-times"></i></div>
+						<textarea type="text" id="modCtnt" placeholder="내용" autocomplete="off"></textarea>
+						<input type="button" id="modBtn" value="수정" />
+					</div>
 				</div>
 			</div>
 		</section>

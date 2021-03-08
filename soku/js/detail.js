@@ -189,7 +189,7 @@ function ajax() {
 }
 
 //  원석이형  모달 관련  js -------------------------------
-const modal = document.querySelector(".modal-wrapper");
+// const modal = document.querySelector(".modal-wrapper");
 const mapModal = document.querySelector(".map-modal");
 const mapModalImg = document.querySelector(".map-modal-img");
 
@@ -219,7 +219,13 @@ window.addEventListener("click", function (e) {
 function reviewModalHandle() {
 	review.classList.toggle("review-open");
 }
+const menu = document.querySelector(".menu");
+// profile toggle
+function toggleMenu() {
+	menu.classList.toggle("toggle");
+}
 
+const chat = document.querySelector(".chat");
 //chat-modal
 function openChatModal() {
 	chat.classList.toggle("open-chat");

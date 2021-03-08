@@ -2,12 +2,20 @@ const modal = document.querySelector(".modal-wrapper");
 const mapModal = document.querySelector(".map-modal");
 const mapModalImg = document.querySelector(".map-modal-img");
 const review = document.querySelector(".review-wrap");
-const chat = document.querySelector(".chat");
 
 const menu = document.querySelector(".menu");
 // profile toggle
 function toggleMenu() {
 	menu.classList.toggle("toggle");
+}
+
+//chat-modal
+const chat = document.querySelector(".chat");
+function openChatModal() {
+	chat.classList.toggle("open-chat");
+}
+function closeChatModal() {
+	chat.classList.remove("open-chat");
 }
 
 //top-img modal
@@ -33,11 +41,3 @@ function reviewModalHandle() {
 window.addEventListener("click", function (e) {
 	e.target === review ? review.classList.remove("review-open") : false;
 });
-
-//chat-modal
-function openChatModal() {
-	chat.classList.toggle("open-chat");
-}
-function closeChatModal() {
-	chat.classList.remove("open-chat");
-}
