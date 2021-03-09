@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="../css/profileEdit2.css" />
+	</head>
+	<body>
+		<div id="container">
+			<form id="frm" autocomplete="off">
+				<h2>My profile</h2>
+
+				<div class="frm-input">
+					<c:choose>
+						<c:when test="${loginUser.u_profile == null}">
+							<c:set var="src" value="profile.jpg" />
+						</c:when>
+						<c:otherwise>
+							<c:set var="src" value="user/${loginUser.u_Pk}/${loginUser.u_profile}" />
+						</c:otherwise>
+					</c:choose>
+					<div><img src="../image/hg2.jpg" alt="프로필 이미지" /></div>
+
+					<div class="img-input">
+						<!-- <h4>프로필 이미지 업로드</h4> -->
+						<div class="imgbtn">
+							<label for="profileImg" class="profileImg">사진선택</label>
+							<input type="file" accept="image/*" id="profileImg" />
+							<input type="button" value="업로드" onclick="profileUpload()" class="profileImg" />
+						</div>
+					</div>
+
+					<div class="id-input">
+						<div>
+							<input type="text" name="u_Id" id="id" value="${loginUser.u_Id}" autocomplete="off" readonly />
+						</div>
+
+						<div>
+							<input type="text" name="u_Nm" id="name" placeholder="${loginUser.u_Nm}" autocomplete="off" />
+						</div>
+
+						<div>
+							<input type="text" name="u_Phone" id="phone" placeholder="${loginUser.u_Phone}" placeholder="phone" />
+						</div>
+
+						<div>
+							<input type="email" name="u_Mail" id="mail" placeholder="${loginUser.u_Mail}" autocomplete="off" />
+						</div>
+
+						<div>
+							<input type="button" id="joinBtn" disabled="disabled" value="수정" />
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<script src="/exam3/profile.js"></script>
+	</body>
+</html>

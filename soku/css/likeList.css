@@ -12,6 +12,11 @@ body {
 	height: 100vh;
 }
 
+main {
+	position: relative;
+	top: 50px;
+}
+
 .container {
 	width: 100%;
 	display: flex;
@@ -20,11 +25,21 @@ body {
 }
 
 .likeList {
-	margin: 40px;
+	position: relative;
+	top: 0;
+	left: 400px;
+	/* display: flex;
+	align-items: center;
+	justify-content: center; */
 	color: #f2ab39;
+	text-align: center;
+}
+.likeList h1 {
+	position: absolute;
 }
 
 .content-list {
+	top: 50px;
 	width: 700px;
 	background: white;
 	display: flex;
@@ -75,6 +90,9 @@ body {
 	text-decoration: none;
 	margin-right: 10px;
 }
+.text_title a:focus {
+	outline: none;
+}
 
 .text_description {
 	font-size: 22px;
@@ -108,6 +126,7 @@ body {
 }
 
 .delBtn {
+	cursor: pointer;
 	border: none;
 	background: transparent;
 	font-size: 20px;
@@ -117,4 +136,33 @@ body {
 
 .delBtn:hover {
 	color: #69491a;
+}
+
+.delBtn:focus {
+	outline: none;
+}
+
+/* 더보기 css */
+.more-like-list {
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.more-like-list button {
+	font-size: 25px;
+	border: none;
+	cursor: pointer;
+	background: none;
+	color: #919191;
+	transition: all 0.5s ease-in-out;
+}
+
+.more-like-list button:hover {
+	color: #69491a;
+}
+
+.more-like-list button:focus {
+	outline: none;
 }

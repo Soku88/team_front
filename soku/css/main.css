@@ -20,7 +20,12 @@ main {
 	height: 100%;
 	top: 100px;
 	z-index: 0;
+}
+
+.slider-wrapper {
+	height: 150px;
 	position: relative;
+	background-image: url("../image/hg2.jpg");
 }
 
 .content-category {
@@ -232,21 +237,27 @@ footer {
 }
 
 .text_wrap {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	width: 100%;
 	padding: 0px 20px;
 }
-.more_info {
-	display: flex;
-	justify-content: flex-end;
-}
+
 .more_info__wrap {
+	width: 100px;
+	text-align: right;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
 	display: flex;
 	align-items: center;
+	text-align: right;
 }
 .more_info__wrap a {
+	/* color: #69491a; */
+	text-decoration: none;
 	transition: all 0.4s ease-in-out;
 }
 .more_info__wrap:hover a {
@@ -285,7 +296,7 @@ footer {
 }
 
 .like-btn {
-	/* position: absolute; */
+	position: absolute;
 	font-size: 15px;
 	top: 10px;
 	right: 0;

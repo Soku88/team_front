@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@1,800&display=swap");
+
+* {
+	box-sizing: border-box;
+	font-family: "Do Hyeon", sans-serif; /* 한글 */
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h2 {
+	padding: 0;
+	font-size: 30px;
+	color: #d2691e;
+	font-family: "Exo", sans-serif; /* 영어 */
+}
+
+img {
+	/* 프로필 이미지 */
+
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	padding: 20px;
+	margin: 10px;
+}
+
+#frm {
+	width: 500px;
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	padding: 30px 20px;
+}
+
+.frm-input {
+	display: flex;
+	flex-direction: column;
+	width: 100% auto;
+	justify-content: center;
+	align-items: center;
+}
+
+h4 {
+	font-weight: lighter;
+}
+
+#profileImg {
+	display: none;
+}
+.profileImg {
+	background: white;
+	padding: 10px;
+	border-radius: 15px;
+	margin-right: 10px;
+	border: none;
+	font-size: 18px;
+	width: 80px;
+	text-align: center;
+	cursor: pointer;
+}
+.img-input {
+	border-radius: 20px;
+	background-color: #ffd954;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	width: 220px;
+}
+.imgbtn {
+	display: flex;
+	/* flex-direction: column; */
+}
+.id-input {
+	border-radius: 20px;
+	background-color: #ffd954;
+	display: flex;
+	flex-direction: column;
+	width: 100% auto;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	margin: 20px;
+	width: 22vw;
+}
+
+.id-input input {
+	width: 150px;
+	padding: 5px;
+	margin: 5px;
+	height: 50px auto;
+	border: none;
+}
+
+.id-input input::placeholder {
+	font-family: "Exo", sans-serif; /* 영어 */
+	font-size: 13px;
+	font-weight: lighter;
+	font-style: italic;
+}

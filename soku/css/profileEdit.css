@@ -9,6 +9,7 @@
 html,
 body {
 	/* background-color: teal; */
+	background-image: url("../image/sand.jpeg");
 	width: 100vw;
 	height: 100vh;
 	display: flex;
@@ -20,32 +21,55 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 300px;
+	width: 400px;
 	height: 100%;
 }
 
-.profile-frm {
-	font-size: 25px;
-	background-color: white;
-	width: 100%;
-	height: 80%;
-	border-radius: 30px;
-	padding: 20px;
+.img-profile-frm {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+	font-size: 25px;
+	background-color: white;
+	width: 100%;
+	height: 400px;
+	border-radius: 50px;
+	padding: 20px;
+	/* box-shadow: 5px 5px 10px #bcbcbc; */
+	margin-right: 30px;
+}
+
+.img-profile-frm h2 {
+	font-size: 50px;
+	margin-bottom: 20px;
+	color: #f1ab3a;
+}
+
+.frm-data {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+.frm-data input {
+	text-align: center;
+	font-size: 20px;
+	border: none;
+	width: 200px;
+	height: 30px;
+	margin-bottom: 10px;
+	border-radius: 15px;
 	box-shadow: 5px 5px 10px #bcbcbc;
 }
 
-.profile-frm h2 {
-	margin-bottom: 10px;
-	color: #f1ab3a;
-	font-size: 50px;
+.frm-data input:focus {
+	outline: none;
 }
 
 .frm-input img {
-	width: 100px;
-	height: 100px;
+	width: 150px;
+	height: 150px;
 	border-radius: 50%;
 	cursor: pointer;
 	box-shadow: 5px 5px 10px gray;
@@ -62,15 +86,16 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-right: 20px;
+	margin-right: 10px;
 	border: none;
-	width: 60px;
+	width: 100px;
 	height: 30px;
 	border-radius: 13px;
 	font-size: 18px;
 	background-color: #fed954;
 	box-shadow: 2px 2px 3px gray;
 	transition: all 0.5s ease-in-out;
+	color: #69491a;
 }
 
 .upload-item:hover {
@@ -89,7 +114,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	border: none;
-	width: 60px;
+	width: 100px;
 	height: 30px;
 	border-radius: 13px;
 	font-size: 18px;
@@ -97,6 +122,7 @@ body {
 	box-shadow: 2px 2px 3px gray;
 	cursor: pointer;
 	transition: all 0.5s ease-in-out;
+	color: #69491a;
 }
 
 .upload-btn input:hover {
@@ -107,48 +133,42 @@ body {
 	outline: none;
 }
 
-.frm-data-wrap {
-	width: 100%;
-	height: 100%;
-	margin-bottom: 20px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.frm-data-wrap div input {
-	width: 200px;
-	border: none;
-	height: 30px;
-	margin-bottom: 15px;
-	border-radius: 20px;
-	font-size: 25px;
-	box-shadow: 2px 2px 3px grey;
-	text-align: center;
-	transition: all 0.5s ease-in-out;
-	color: #69491a;
-}
-
-.frm-data-wrap div input:focus {
-	outline: none;
-	background-color: #f1ab3a;
-}
-
 .frm-data-submit input {
 	font-size: 25px;
 	color: #69491a;
-	width: 100px;
+	width: 120px;
 	height: 30px;
 	border: none;
 	border-radius: 20px;
 	background: #fed954;
-	box-shadow: 2px 2px 3px grey;
+	box-shadow: 2px 2px 3px #aeaeae;
 	transition: all 0.5s ease-in-out;
 	cursor: pointer;
+	margin-bottom: 30px;
+	margin: 5px;
 }
 
 .frm-data-submit input:hover {
 	background: #69491a;
+	color: #f1ab3a;
+}
+
+/* 회원정보 수정 폼 */
+.mod-profile-frm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 25px;
+	width: 100%;
+	height: 400px;
+	padding: 20px;
+	background: #ffffff;
+	border-radius: 50px;
+}
+
+.mod-profile-frm h2 {
+	font-size: 50px;
+	margin-bottom: 20px;
 	color: #f1ab3a;
 }

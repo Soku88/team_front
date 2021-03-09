@@ -10,19 +10,17 @@
 	</head>
 	<body>
 		<div id="container" class="conteiner">
-			<form id="frm" autocomplete="off" class="profile-frm">
+			<form action="" class="img-profile-frm">
+				<c:choose>
+					<c:when test="${loginUser.u_profile == null}">
+						<c:set var="src" value="profile.jpg" />
+					</c:when>
+					<c:otherwise>
+						<c:set var="src" value="user/${loginUser.u_Pk}/${loginUser.u_profile}" />
+					</c:otherwise>
+				</c:choose>
 				<h2>My profile</h2>
 				<div class="frm-input">
-					<c:choose>
-						<c:when test="${loginUser.u_profile == null}">
-							<c:set var="src" value="profile.jpg" />
-						</c:when>
-						<c:otherwise>
-							<c:set var="src" value="user/${loginUser.u_Pk}/${loginUser.u_profile}" />
-						</c:otherwise>
-					</c:choose>
-					<!-- 원래있던거
-					<img src="/resources/image/${src}" alt="프로필 이미지" /> -->
 					<label for="profileImg">
 						<img src="../image/hg2.jpg" alt="프로필 이미지" />
 					</label>
@@ -36,24 +34,23 @@
 						<input type="button" value="업로드" onclick="profileUpload()" />
 					</div>
 				</div>
-				<div class="frm-data-wrap">
-					<div class="id-input">
-						<input type="text" name="u_Id" id="id" value="${loginUser.u_Id}" autocomplete="off" readonly />
-					</div>
-					<div>
-						<input type="text" name="u_Nm" id="name" placeholder="${loginUser.u_Nm}" autocomplete="off" />
-					</div>
-					<div>
-						<input type="text" name="u_Phone" id="phone" placeholder="${loginUser.u_Phone}" placeholder="phone" />
-					</div>
-					<div>
-						<input type="email" name="u_Mail" id="mail" placeholder="${loginUser.u_Mail}" autocomplete="off" />
-					</div>
+			</form>
+			<form action="" class="mod-profile-frm">
+				<h2>Edit profile</h2>
+				<div class="frm-data">
+					<input type="text" name="u_Nm" id="name" placeholder="${loginUser.u_Nm}" />
+					<input type="text" name="u_Phone" id="phone" placeholder="${loginUser.u_Phone}" />
+					<input type="email" name="u_Mail" id="mail" placeholder="${loginUser.u_Mail}" />
 				</div>
 				<div class="frm-data-submit">
 					<input type="button" id="joinBtn" disabled="disabled" value="수정" />
 				</div>
 			</form>
+			<div class="frm-data-submit">
+				<input type="button" id="joinBtn" disabled="disabled" value="PW변경" />
+				<input type="button" id="joinBtn" disabled="disabled" value="회원탈퇴" />
+			</div>
+			<form action="" for="">회원정보수정</form>
 		</div>
 	</body>
 </html>
