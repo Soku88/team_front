@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Cute+Font&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "Cute Font", cursive;
+	box-sizing: border-box;
+}
+html,
+body {
+	/* background-color: teal; */
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 300px;
+	height: 100%;
+}
+
+.profile-frm {
+	font-size: 25px;
+	background-color: whitesmoke;
+	width: 100%;
+	height: 80%;
+	border-radius: 30px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 5px 5px 10px gray;
+}
+
+.profile-frm h2 {
+	margin-bottom: 10px;
+	color: #f1ab3a;
+	font-size: 50px;
+}
+
+.frm-input img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	cursor: pointer;
+	box-shadow: 5px 5px 10px gray;
+}
+
+.uploadImg {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 30px 0px;
+}
+
+.upload-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 20px;
+	border: none;
+	width: 60px;
+	height: 30px;
+	border-radius: 13px;
+	font-size: 18px;
+	background-color: #fed954;
+	box-shadow: 2px 2px 3px gray;
+	transition: all 0.5s ease-in-out;
+}
+
+.upload-item:hover {
+	background: #69491a;
+	color: #f1ab3a;
+}
+.upload-item label {
+	cursor: pointer;
+}
+.upload-item input {
+	display: none;
+}
+
+.upload-btn input {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	width: 60px;
+	height: 30px;
+	border-radius: 13px;
+	font-size: 18px;
+	background-color: #fed954;
+	box-shadow: 2px 2px 3px gray;
+	cursor: pointer;
+	transition: all 0.5s ease-in-out;
+}
+
+.upload-btn input:hover {
+	background-color: #69491a;
+	color: #f1ab3a;
+}
+.upload-btn input:focus {
+	outline: none;
+}
+
+.frm-data-wrap {
+	width: 100%;
+	height: 100%;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.frm-data-wrap div input {
+	width: 200px;
+	border: none;
+	height: 30px;
+	margin-bottom: 15px;
+	border-radius: 20px;
+	font-size: 25px;
+	box-shadow: 2px 2px 3px grey;
+	text-align: center;
+	transition: all 0.5s ease-in-out;
+	color: #69491a;
+}
+
+.frm-data-wrap div input:focus {
+	outline: none;
+	background-color: #f1ab3a;
+}
+
+.frm-data-submit input {
+	font-size: 25px;
+	color: #69491a;
+	width: 100px;
+	height: 30px;
+	border: none;
+	border-radius: 20px;
+	background: #fed954;
+	box-shadow: 2px 2px 3px grey;
+	transition: all 0.5s ease-in-out;
+	cursor: pointer;
+}
+
+.frm-data-submit input:hover {
+	background: #69491a;
+	color: #f1ab3a;
+}
