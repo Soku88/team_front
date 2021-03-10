@@ -10,21 +10,22 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<header></header>
+		<div></div>
 		<div id="container" class="conteiner">
+			<div class="slider-wrapper"></div>
 			<div class="myProfile">
 				<div class="profile-title">My Profile</div>
 			</div>
 			<div class="frm-wrapper">
 				<form action="" class="img-profile-frm">
-					<!-- <c:choose>
+					<c:choose>
 						<c:when test="${loginUser.u_profile == null}">
 							<c:set var="src" value="profile.jpg" />
 						</c:when>
 						<c:otherwise>
 							<c:set var="src" value="user/${loginUser.u_Pk}/${loginUser.u_profile}" />
 						</c:otherwise>
-					</c:choose> -->
+					</c:choose>
 					<div class="frm-img-wrap">
 						<h2>profile image</h2>
 						<div class="frm-img">
@@ -43,7 +44,7 @@
 						</div>
 					</div>
 				</form>
-				<form action="" class="mod-profile-frm">
+				<div class="mod-profile-frm">
 					<h2>Edit profile</h2>
 					<div class="frm-data">
 						<input type="text" name="u_Nm" id="name" placeholder="${loginUser.u_Nm}" />
@@ -53,7 +54,7 @@
 					<div class="frm-data-submit">
 						<input type="button" id="joinBtn" disabled="disabled" value="수정" />
 					</div>
-				</form>
+				</div>
 			</div>
 			<div class="frm-data-outBtn">
 				<button class="openBtn">PW변경</button>
@@ -67,7 +68,6 @@
 				<div class="modalBox-wrap">
 					<p>* 비밀번호를 정확히 입력하고 [변경]을 눌러주세요 *</p>
 					<div class="modalBox-input">
-						<input type="password" name="u_Pass" id="pw" placeholder="기존 비밀번호" />
 						<input type="password" name="u_newPass" id="newPass" placeholder="새 비밀번호" />
 						<input type="password" name="u_newPassRe" id="newPassRe" placeholder="비밀번호 확인" />
 					</div>

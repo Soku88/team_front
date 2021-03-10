@@ -1,11 +1,6 @@
 const open = () => {
 	document.querySelector(".modal").classList.remove("hidden");
 };
-
-// function open() {
-// 	document.querySelector(".modal").classList.remove("hidden");
-// }
-
 const close = () => {
 	document.querySelector(".modal").classList.add("hidden");
 };

@@ -277,9 +277,18 @@ footer {
 	width: 100%;
 }
 
+.paging-wrapper {
+}
 .paging {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-size: 35px;
 	margin: 20px;
+}
+.paging i {
+	margin: 0px 10px;
 }
 
 .paging a {
@@ -289,8 +298,7 @@ footer {
 	transition: all 0.5s ease-in-out;
 }
 
-.paging a:hover,
-.paging a:focus {
+.paging a:hover {
 	color: #69491a;
 	outline: none;
 }
