@@ -6,51 +6,74 @@
 		<script defer src="../js/profileEdit.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../css/profileEdit.css" />
+		<script defer src="../js/pw.js"></script>
 		<title>Document</title>
 	</head>
 	<body>
+		<header></header>
 		<div id="container" class="conteiner">
-			<form action="" class="img-profile-frm">
-				<c:choose>
-					<c:when test="${loginUser.u_profile == null}">
-						<c:set var="src" value="profile.jpg" />
-					</c:when>
-					<c:otherwise>
-						<c:set var="src" value="user/${loginUser.u_Pk}/${loginUser.u_profile}" />
-					</c:otherwise>
-				</c:choose>
-				<h2>My profile</h2>
-				<div class="frm-input">
-					<label for="profileImg">
-						<img src="../image/hg2.jpg" alt="프로필 이미지" />
-					</label>
-				</div>
-				<div class="uploadImg">
-					<div class="upload-item">
-						<label for="profileImg">파일선택</label>
-						<input type="file" accept="image/*" id="profileImg" />
-					</div>
-					<div class="upload-btn">
-						<input type="button" value="업로드" onclick="profileUpload()" />
-					</div>
-				</div>
-			</form>
-			<form action="" class="mod-profile-frm">
-				<h2>Edit profile</h2>
-				<div class="frm-data">
-					<input type="text" name="u_Nm" id="name" placeholder="${loginUser.u_Nm}" />
-					<input type="text" name="u_Phone" id="phone" placeholder="${loginUser.u_Phone}" />
-					<input type="email" name="u_Mail" id="mail" placeholder="${loginUser.u_Mail}" />
-				</div>
-				<div class="frm-data-submit">
-					<input type="button" id="joinBtn" disabled="disabled" value="수정" />
-				</div>
-			</form>
-			<div class="frm-data-submit">
-				<input type="button" id="joinBtn" disabled="disabled" value="PW변경" />
-				<input type="button" id="joinBtn" disabled="disabled" value="회원탈퇴" />
+			<div class="myProfile">
+				<div class="profile-title">My Profile</div>
 			</div>
-			<form action="" for="">회원정보수정</form>
+			<div class="frm-wrapper">
+				<form action="" class="img-profile-frm">
+					<!-- <c:choose>
+						<c:when test="${loginUser.u_profile == null}">
+							<c:set var="src" value="profile.jpg" />
+						</c:when>
+						<c:otherwise>
+							<c:set var="src" value="user/${loginUser.u_Pk}/${loginUser.u_profile}" />
+						</c:otherwise>
+					</c:choose> -->
+					<div class="frm-img-wrap">
+						<h2>profile image</h2>
+						<div class="frm-img">
+							<label for="profileImg">
+								<img src="../image/hg2.jpg" alt="프로필 이미지" />
+							</label>
+						</div>
+					</div>
+					<div class="uploadImg">
+						<div class="upload-item">
+							<label for="profileImg">파일선택</label>
+							<input type="file" accept="image/*" id="profileImg" />
+						</div>
+						<div class="upload-btn">
+							<input type="button" value="업로드" onclick="profileUpload()" />
+						</div>
+					</div>
+				</form>
+				<form action="" class="mod-profile-frm">
+					<h2>Edit profile</h2>
+					<div class="frm-data">
+						<input type="text" name="u_Nm" id="name" placeholder="${loginUser.u_Nm}" />
+						<input type="text" name="u_Phone" id="phone" placeholder="${loginUser.u_Phone}" />
+						<input type="email" name="u_Mail" id="mail" placeholder="${loginUser.u_Mail}" />
+					</div>
+					<div class="frm-data-submit">
+						<input type="button" id="joinBtn" disabled="disabled" value="수정" />
+					</div>
+				</form>
+			</div>
+			<div class="frm-data-outBtn">
+				<button class="openBtn">PW변경</button>
+				<!-- <input type="button" id="" disabled="disabled" value="PW변경" /> -->
+				<input type="button" id="" disabled="disabled" value="회원탈퇴" />
+			</div>
+		</div>
+		<div class="modal hidden">
+			<div class="bg"></div>
+			<div class="modalBox">
+				<div class="modalBox-wrap">
+					<p>* 비밀번호를 정확히 입력하고 [변경]을 눌러주세요 *</p>
+					<div class="modalBox-input">
+						<input type="password" name="u_Pass" id="pw" placeholder="기존 비밀번호" />
+						<input type="password" name="u_newPass" id="newPass" placeholder="새 비밀번호" />
+						<input type="password" name="u_newPassRe" id="newPassRe" placeholder="비밀번호 확인" />
+					</div>
+					<button class="closeBtn">변경</button>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

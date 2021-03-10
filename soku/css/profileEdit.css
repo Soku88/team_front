@@ -8,36 +8,69 @@
 }
 html,
 body {
-	/* background-color: teal; */
-	background-image: url("../image/sand.jpeg");
 	width: 100vw;
 	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-#container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 400px;
-	height: 100%;
-}
-
-.img-profile-frm {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	font-size: 25px;
-	background-color: white;
+	z-index: 0;
+}
+
+header {
+	position: fixed;
+	top: 0;
 	width: 100%;
-	height: 400px;
+	height: 80px;
+	background-image: url("../image/hg2.jpg");
+	z-index: -1;
+}
+
+#container {
+	position: relative;
+	top: 270px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/* height: 100%; */
+	width: 100%;
+	z-index: -2;
+}
+.frm-wrapper {
+	/* width: 100%; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.myProfile {
+	margin-bottom: 30px;
+}
+
+.myProfile .profile-title {
+	font-size: 60px;
+	color: #69491a;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.img-profile-frm {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	font-size: 25px;
+	width: 700px;
 	border-radius: 50px;
 	padding: 20px;
-	/* box-shadow: 5px 5px 10px #bcbcbc; */
-	margin-right: 30px;
+	margin-bottom: 30px;
+	box-shadow: 5px 5px 10px #bcbcbc;
+	transition: all 0.5s ease-in;
+}
+
+.img-profile-frm:hover {
+	background-color: whitesmoke;
 }
 
 .img-profile-frm h2 {
@@ -52,13 +85,19 @@ body {
 	margin-bottom: 20px;
 }
 
+.frm-data-submit {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .frm-data input {
 	text-align: center;
 	font-size: 20px;
 	border: none;
-	width: 200px;
-	height: 30px;
-	margin-bottom: 10px;
+	width: 300px;
+	height: 40px;
+	margin-bottom: 20px;
 	border-radius: 15px;
 	box-shadow: 5px 5px 10px #bcbcbc;
 }
@@ -67,31 +106,39 @@ body {
 	outline: none;
 }
 
-.frm-input img {
-	width: 150px;
-	height: 150px;
+.frm-img-wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 30px;
+}
+.frm-img img {
+	width: 200px;
+	height: 200px;
 	border-radius: 50%;
 	cursor: pointer;
 	box-shadow: 5px 5px 10px gray;
 }
 
 .uploadImg {
+	height: 100%;
+	width: 100%;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin: 30px 0px;
+	margin-bottom: 20px;
 }
 
 .upload-item {
+	margin-bottom: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-right: 10px;
 	border: none;
-	width: 100px;
-	height: 30px;
-	border-radius: 13px;
-	font-size: 18px;
+	width: 70%;
+	border-radius: 20px;
+	font-size: 25px;
 	background-color: #fed954;
 	box-shadow: 2px 2px 3px gray;
 	transition: all 0.5s ease-in-out;
@@ -109,15 +156,20 @@ body {
 	display: none;
 }
 
+.upload-btn {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 .upload-btn input {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	border: none;
-	width: 100px;
-	height: 30px;
-	border-radius: 13px;
-	font-size: 18px;
+	width: 70%;
+	border-radius: 20px;
+	font-size: 25px;
 	background-color: #fed954;
 	box-shadow: 2px 2px 3px gray;
 	cursor: pointer;
@@ -153,22 +205,185 @@ body {
 	color: #f1ab3a;
 }
 
+.frm-data-outBtn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 50px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.frm-data-outBtn input {
+	font-size: 25px;
+	color: #69491a;
+	border: none;
+	width: 120px;
+	height: 40px;
+	border-radius: 25px;
+	background-color: #bcbcbc4f;
+	cursor: pointer;
+	box-shadow: 5px 5px 10px #bcbcbc;
+	transition: all 0.5s ease-in-out;
+	margin-right: 20px;
+}
+.frm-data-outBtn button {
+	font-size: 25px;
+	color: #69491a;
+	border: none;
+	width: 120px;
+	height: 40px;
+	border-radius: 25px;
+	background-color: #bcbcbc4f;
+	cursor: pointer;
+	box-shadow: 5px 5px 10px #bcbcbc;
+	transition: all 0.5s ease-in-out;
+	margin-right: 20px;
+}
+
+.frm-data-outBtn input:hover {
+	background-color: tomato;
+	color: whitesmoke;
+}
+
 /* 회원정보 수정 폼 */
 .mod-profile-frm {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	font-size: 25px;
 	width: 100%;
-	height: 400px;
 	padding: 20px;
-	background: #ffffff;
 	border-radius: 50px;
+	box-shadow: 5px 5px 10px #bcbcbc;
+	transition: all 0.5s ease-in;
+}
+
+.mod-profile-frm:hover {
+	background: whitesmoke;
 }
 
 .mod-profile-frm h2 {
 	font-size: 50px;
 	margin-bottom: 20px;
 	color: #f1ab3a;
+}
+
+/* change pw modal */
+
+button {
+	background-color: #f9b514;
+	padding: 5px 10px;
+	border-radius: 4px;
+	border: none;
+	box-shadow: 3px 3px 5px #69491a;
+	cursor: pointer;
+}
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal .bg {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	/* z-index: -1; */
+}
+
+.modalBox {
+	position: absolute;
+	background-color: #fff;
+	width: 450px;
+	height: 300px;
+	padding: 15px;
+	border-radius: 20px;
+	display: flex;
+}
+
+.modalBox-wrap {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.modalBox-input {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+.modalBox input {
+	text-align: center;
+	border-radius: 15px;
+	width: 250px;
+	height: 30px;
+	border: none;
+	margin-bottom: 15px;
+	box-shadow: 5px 5px 10px #bcbcbc;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.3s ease-in-out;
+}
+
+.modalBox input:focus {
+	outline: none;
+}
+
+.modalBox input:hover {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.modalBox input::placeholder {
+	font-size: 17px;
+}
+
+.modalBox button {
+	width: 120px;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 2px 2px 3px #aeaeae;
+	background: #fed954;
+	border-radius: 20px;
+	color: #69491a;
+	transition: all 0.5s ease-in-out;
+	font-size: 25px;
+}
+
+.modalBox button:hover {
+	background: #69491a;
+	color: #f1ab3a;
+}
+
+.openBtn:hover {
+	background: tomato;
+	color: whitesmoke;
+}
+.openBtn:focus {
+	outline: none;
+}
+
+.modalBox button:focus {
+	outline: none;
+}
+
+p {
+	color: #d2691e;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.hidden {
+	display: none;
 }
